@@ -1,6 +1,6 @@
 # EDCRGTC — Riemannian Geometry and Tensor Calculus in Wolfram Mathematica
 
-This Wolfram Mathematica package was originally created by **Sotirios Bonanos** (NCSR "Demokritos", Athens, Greece). It is shared in this repository as a companion to the course notes and problem sets.
+This Wolfram Mathematica package was originally created by **Sotirios Bonanos** (NCSR "Demokritos", Athens, Greece). It is shared with the kind permission of his family, as a companion to the course notes and problem sets.
 
 This repository is maintained by:
 - **Savvas Nesseris** — Instituto de Física Teórica (IFT) UAM-CSIC, Madrid, Spain
