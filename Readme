@@ -87,7 +87,7 @@ The package documentation has more examples worth looking at. In your first prob
 
 ## ⚠️ Known issue and fixes
 
-In recent versions of Mathematica, the package's `Classify` function clashes with the built-in `System`Classify`, which can stop the package from loading or working correctly. There are two ways around this:
+In recent versions of Mathematica, the package's `Classify` function clashes with the built-in ``System`Classify``, which can stop the package from loading or working correctly. There are two ways around this:
 
 **Option 1: change the context while loading.** Temporarily move the built-in `Classify` out of the way, load the package, then put it back:
 
