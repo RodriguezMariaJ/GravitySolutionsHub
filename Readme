@@ -1,1 +1,100 @@
-This is a repository for the RGTC code by the late S. Bonanos (with permission). We aim to maintain the code and also provide examples of it usage on topics related to research in gravitational physics and cosmology.
+# EDCRGTC — Riemannian Geometry and Tensor Calculus in Wolfram Mathematica
+
+This Wolfram Mathematica package was originally created by **Sotirios Bonanos** (NCSR "Demokritos", Athens, Greece). It is shared in this repository as a companion to the course notes and problem sets.
+
+This repository is maintained by:
+- **Savvas Nesseris** — Instituto de Física Teórica (IFT) UAM-CSIC, Madrid, Spain
+- **Maria J. Rodriguez** — Utah State University, USA, and Instituto de Física Teórica (IFT) UAM-CSIC, Madrid, Spain
+
+## Getting started
+
+Load the package at the start of your notebook with
+
+```mathematica
+<< EDCRGTCcode.wl
+```
+
+After you do this, you need to input the coordinates and the metric. For example, the AdS<sub>4</sub> metric with radius $L$,
+
+$$
+ds^2 = -\left(\frac{r^2}{L^2} + 1\right) dt^2 + \frac{dr^2}{\frac{r^2}{L^2} + 1} + r^2\, d\Omega_2^2 ,
+$$
+
+would be given by
+
+```mathematica
+Coordinates = {t, r, θ, φ};
+Metric = DiagonalMatrix[{-(r^2/L^2 + 1), 1/(r^2/L^2 + 1), r^2, r^2 Sin[θ]^2}];
+```
+
+Now run the command
+
+```mathematica
+RGtensors[Metric, Coordinates]
+```
+
+This will automatically compute a number of curvature tensors and invariants for you.
+
+## Useful objects and commands
+
+| Command | Meaning |
+|---|---|
+| `gdd` | the metric, $g_{\mu\nu}$ |
+| `gUU` | the inverse metric, $g^{\mu\nu}$ |
+| `Rdddd` | the Riemann tensor with lower indices, $R_{\mu\nu\rho\sigma}$ |
+| `Rdd` | the Ricci tensor with lower indices, $R_{\mu\nu}$ |
+| `R` | the scalar curvature, $R$ |
+| `covD[ ]` | the covariant derivative with lower index, $\nabla_\mu$ |
+| `multiDot[A, B, {i, j}, {m, n}, ...]` | contracts the *i*-th index of `A` with the *j*-th index of `B`, the *m*-th index of `A` with the *n*-th index of `B`, and so on |
+
+> **Note:** `R` is protected, so don't use this symbol for anything else in your notebook.
+
+## Examples
+
+To compute
+
+$$
+g^{\mu\nu} \nabla_\mu \nabla_\nu f(t, r),
+$$
+
+where $f$ is a scalar function, use
+
+```mathematica
+multiDot[gUU, covD[covD[f[t, r, θ, φ]]], {1, 1}, {2, 2}]
+```
+
+For
+
+$$
+g^{\mu\nu} \nabla_\mu f(t, r)\, \nabla_\nu f(t, r)
+$$
+
+you may simply use
+
+```mathematica
+covD[f[t, r, θ, φ]] . gUU . covD[f[t, r, θ, φ]]
+```
+
+since the dot `.` means matrix multiplication.
+
+The outer product of forms, e.g. $F_{\mu\nu} F_{\rho\sigma}$, is given by
+
+```mathematica
+Outer[Times, Fd, Fd]
+```
+
+The package documentation has more examples worth looking at. In your first problem set you'll be asked to use this package to verify that specific metrics are solutions to Einstein's equations of motion.
+
+## ⚠️ Known issue and fixes
+
+In recent versions of Mathematica, the package's `Classify` function clashes with the built-in `System`Classify`, which can stop the package from loading or working correctly. There are two ways around this:
+
+**Option 1: change the context while loading.** Temporarily move the built-in `Classify` out of the way, load the package, then put it back:
+
+```mathematica
+Context[System`Classify] = "hold`";
+<< EDCRGTCcode`
+Context[hold`Classify] = "System`";
+```
+
+**Option 2: use the fixed version of the package.** In `EDCRGTCcode1.0.1.wl`, the function `Classify` has been renamed to `Classification`, so there's no clash. If you use this version, call `Classification` wherever older notes or examples use `Classify`.
