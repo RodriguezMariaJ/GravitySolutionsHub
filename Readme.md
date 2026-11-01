@@ -83,7 +83,9 @@ The outer product of forms, e.g. $F_{\mu\nu} F_{\rho\sigma}$, is given by
 Outer[Times, Fd, Fd]
 ```
 
-The package documentation has more examples worth looking at. In your first problem set you'll be asked to use this package to verify that specific metrics are solutions to Einstein's equations of motion.
+The package documentation has more examples worth looking at. 
+> **Note:** For more examples, have a look at the RGTC code also included in this repository, which contains a set of worked examples showing how to use the package.
+
 
 ## ⚠️ Known issue and fixes
 
