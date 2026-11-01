@@ -86,6 +86,9 @@ Outer[Times, Fd, Fd]
 The package documentation has more examples worth looking at. 
 > **Note:** For more examples, have a look at the RGTC code also included in this repository, which contains a set of worked examples showing how to use the package.
 
+## Contributing
+
+Contributions are welcome! If you have Wolfram Mathematica files with black hole solutions (or other metrics and examples) that you would like to contribute, please send us a message or open an issue in this repository.
 
 ## ⚠️ Known issue and fixes
 
