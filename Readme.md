@@ -103,3 +103,23 @@ Context[hold`Classify] = "System`";
 ```
 
 **Option 2: use the fixed version of the package.** In `EDCRGTCcode1.0.1.wl`, the function `Classify` has been renamed to `Classification`, so there's no clash. If you use this version, call `Classification` wherever older notes or examples use `Classify`.
+
+
+## Citation
+
+If you use this code, please cite:
+
+```bibtex
+@article{Rodriguez:2026pinnlove,
+  author        = {Rodr{\'i}guez, Mar{\'i}a J. and Temoche, Luis Fernando and Protopapas, Pavlos},
+  title         = {Black Hole Love Numbers with Physics-Informed Neural Networks},
+  year          = {2026},
+  eprint        = {XXXX.XXXXX},
+  archivePrefix = {arXiv},
+  primaryClass  = {gr-qc}
+}
+```
+
+### Acknowledgements
+
+Some symbolic computations used the Mathematica package *Riemannian Geometry & Tensor Calculus* (RGTC) by S. Bonanos, available from the [Wolfram Library Archive (MathSource 4484)](https://library.wolfram.com/infocenter/MathSource/4484/).
