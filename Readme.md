@@ -109,14 +109,14 @@ Context[hold`Classify] = "System`";
 
 If you use this code, please cite:
 
-```bibtex
-@article{Rodriguez:2026pinnlove,
-  author        = {Rodr{\'i}guez, Mar{\'i}a J. and Temoche, Luis Fernando and Protopapas, Pavlos},
-  title         = {Black Hole Love Numbers with Physics-Informed Neural Networks},
-  year          = {2026},
-  eprint        = {XXXX.XXXXX},
-  archivePrefix = {arXiv},
-  primaryClass  = {gr-qc}
+```@incollection{Bonanos:2003RGTC,
+  author    = {Bonanos, Sotirios},
+  title     = {Capabilities of the {Mathematica} package ``{Riemannian Geometry and Tensor Calculus}''},
+  booktitle = {Recent Developments in Gravity: Proceedings of the 10th Hellenic Relativity Conference},
+  publisher = {World Scientific},
+  address   = {Singapore},
+  year      = {2003},
+  note      = {Package available from the Wolfram Library Archive, MathSource 4484, \url{https://library.wolfram.com/infocenter/MathSource/4484/}}
 }
 ```
 
